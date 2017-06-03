@@ -7,6 +7,10 @@
 import codecs
 import json
 import MySQLdb
+import MySQLdb.cursors
+
+from twisted.enterprise import adbapi
+
 from scrapy.pipelines.images import ImagesPipeline
 from scrapy.exporters import JsonItemExporter
 
@@ -22,10 +26,10 @@ class JsonwithencodingPipeline(object):
         # 传入codecs.open()函数的三个参数，第一个要打开的JSON文件，第二个参数表示的是权限，"w"表示可以写入，第三个参数是文件的编码方式，这里以utf-8编码编码方式存储
         self.file = codecs.open('article.json', 'w', encoding="utf-8")
 
-    """
-    将item写入到文件中，这里使用到了json.dumps()函数将items转换成一个字符串，但是json接收参数是字典类型的，所以我们要先将item转换成字典类型.
-    然后第二个参数一定要设置成False，否则出现中文等的时候可能会出错。
-    """
+    # """
+    # 将item写入到文件中，这里使用到了json.dumps()函数将items转换成一个字符串，但是json接收参数是字典类型的，所以我们要先将item转换成字典类型.
+    # 然后第二个参数一定要设置成False，否则出现中文等的时候可能会出错。
+    # """
     def process_item(self,item, spider):
         lines = json.dumps(dict(item), ensure_ascii=False)+"\n"
         self.file.write(lines)
@@ -46,15 +50,17 @@ class MysqlPipeline(object):
     def process_item(self,item, spider):
         # 在sql语句中，"%s"是占位符，用来占住位置，方便接下来传参数
         insert_sql = """
-            insert into jobbolearticle(title, post_date, url, url_object_id, praise_num, favor_num, comments_num, contant, tags, front_image_url)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            insert into jobbolearticle(title, post_date, url, favor_num, 
+                                       comments_num, praise_num, tags,url_object_id, front_image_url, contant)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s,%s)
         """
-        self.cursor.execute(insert_sql, (item["title"], item["post_date"], item["url"], item["url_object_id"],
-                                         item["praise_num"], item["favor_num"], item["comments_num"], item["contant"],
-                                         item["tags"], item["front_image_url"]))
+        self.cursor.execute(insert_sql, (item["title"], item["post_date"], item["url"],
+                                         item["favor_num"], item["comments_num"],
+                                         item["praise_num"],item["tags"],item["url_object_id"],
+                                         item["front_image_url"][0], item["contant"]))
         # 为什么最后要commit呢？这里有一个坑，一开始写成了cursor.commit，但是出错了，改成conn试一试。
         self.conn.commit()
-        return item
+        # return item
 
 
 

@@ -68,7 +68,7 @@ ROBOTSTXT_OBEY = False
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    # 'ArticleSpider.pipelines.JsonExpoterPipeline': 2,
-   # # 'ArticleSpider.pipelines.JsonwithencodingPipeline': 2,
+   # 'ArticleSpider.pipelines.JsonwithencodingPipeline': 1,
    # 'ArticleSpider.pipelines.ArticlespiderPipeline': 300,
    # # 'scrapy.pipelines.images.ImagesPipeline': 1,
    'ArticleSpider.pipelines.MysqlPipeline': 1,

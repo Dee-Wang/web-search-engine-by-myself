@@ -50,6 +50,11 @@ class JobboleSpider(scrapy.Spider):
 
         # 获取当前URL页面的文章的点赞数,以整型数存储
         praise_num = int(response.xpath("//span[contains(@class,'vote-post-up')]/h10/text()").extract_first(""))
+        # praise_num = response.xpath("//span[contains(@class,'vote-post-up')]/h10/text()").extract_first("")
+        # if praise_num:
+        #     praise_num = int(praise_num)
+        # else:
+        #     praise_num = 0
 
         # 获取当前URL页面的文章的收藏数,以整型数存储
         favor_num = response.xpath("//span[contains(@class,'bookmark-btn')]/text()").extract_first("")
