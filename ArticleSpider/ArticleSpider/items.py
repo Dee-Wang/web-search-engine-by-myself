@@ -14,7 +14,16 @@ class ArticlespiderItem(scrapy.Item):
     pass
 
 
-class ArticleItem(scrapy.Item):
+class JobBoleArticleItem(scrapy.Item):
     title = scrapy.Field()
     post_date = scrapy.Field()
     url = scrapy.Field()
+    url_object_id = scrapy.Field()
+    praise_num = scrapy.Field()
+    favor_num = scrapy.Field()
+    comments_num = scrapy.Field()
+    contant = scrapy.Field()
+    tags = scrapy.Field()
+    front_image_url = scrapy.Field()
+    front_image_path = scrapy.Field()
+

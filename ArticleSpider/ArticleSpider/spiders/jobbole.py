@@ -2,9 +2,13 @@
 import scrapy
 
 import re
+import datetime
+import ArticleSpider
 
 from scrapy.http import Request
 from urllib import parse
+from ArticleSpider.items import JobBoleArticleItem
+from ArticleSpider.utils.common import get_md5
 
 class JobboleSpider(scrapy.Spider):
     name = 'jobbole'
@@ -20,20 +24,24 @@ class JobboleSpider(scrapy.Spider):
         """
 
         # 获取文章列表页中的文章url并交给scrapy下载后进行解析
-        post_urls = response.css("#archive .floated-thumb .post-thumb a::attr(href)").extract()
-        for post_url in post_urls:
-            yield Request(url=parse.urljoin(response.url, post_url),callback=self.parse_detail)
+        post_nodes = response.css("#archive .floated-thumb .post-thumb a")
+        for post_node in post_nodes:
+            image_url = post_node.css("img::attr(src)").extract_first("")
+            post_url = post_node.css("::attr(href)").extract_first("")
+            yield Request(url=parse.urljoin(response.url, post_url),meta = {"front_image_url":image_url}, callback=self.parse_detail)
 
-        # 提取下一页并交给scrapy进行下载
-        next_url = response.css('.next.page-numbers::attr(href)').extract_first("")
-        if next_url:
-            yield Request(url=parse.urljoin(response.url, next_url), callback=self.parse)
-
-
+        # # 提取下一页并交给scrapy进行下载
+        # next_url = response.css('.next.page-numbers::attr(href)').extract_first("")
+        # if next_url:
+        #     yield Request(url=parse.urljoin(response.url, next_url), callback=self.parse)
 
     def parse_detail(self, response):
         """提取文章的具体字段"""
-        
+
+        article_item = JobBoleArticleItem()
+        # 获取当前的文章的封面图
+        fornt_image_url = response.meta.get("front_image_url", "")
+
         # 通过css选择器提取文章标题字段,这里还是以字符串形式存储
         title = response.css(".entry-header h1::text").extract_first("")
 
@@ -66,8 +74,26 @@ class JobboleSpider(scrapy.Spider):
         # 获取文章的标签
         tags_list = response.xpath('//p[@class="entry-meta-hide-on-mobile"]/a/text()').extract()
         tags_list = [element for element in tags_list if not element.strip().endswith("评论")]
+        tags = ",".join(tags_list)
 
+        article_item["url_object_id"] = get_md5(response.url)
+        article_item["title"] = title
+        # 因为存储到数据库中的发布时间是date的形式，所以要在这里将字符串的形式转化成date的形式
+        try:
+            post_date = datetime.datetime.strptime(post_date, "%Y/%m/%d").date()
+        except Exception as e:
+            post_date = datetime.datetime.now().date()
 
+        article_item["post_date"] = post_date
+        article_item["praise_num"] = praise_num
+        article_item["favor_num"] = favor_num
+        article_item["comments_num"] = comments_num
+        article_item["contant"] = contant
+        article_item["tags"] = tags
+        article_item["url"] = response.url
+        article_item["front_image_url"] = [fornt_image_url]
+
+        yield article_item
 
         # # 获取当前的URL对应的页面的文章的标题,以字符串形式存储
         # title = response.xpath('//*[@id="post-111312"]/div[1]/h1/text()').extract_first("")
@@ -110,4 +136,4 @@ class JobboleSpider(scrapy.Spider):
         # tags_list_bycss = response.css('.entry-meta-hide-on-mobile a::text').extract()
         # tags_list_bycss = [element for element in tags_list_bycss if not element.strip().endswith("评论")]
 
-        pass
+
