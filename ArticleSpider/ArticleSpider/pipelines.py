@@ -40,7 +40,7 @@ class JsonwithencodingPipeline(object):
         self.file.close()
 
 
-# 链接数据库，将爬取道德内容存储到数据库中
+# 连接数据库，将爬取道德内容存储到数据库中
 class MysqlPipeline(object):
     def __init__(self):
         # 首先要连接数据库,connect()的参数分别是root, user_name, mysql pwd, datebase_name. 字符集，以及是否使用Unicode编码

@@ -6,6 +6,8 @@ import datetime
 import ArticleSpider
 
 from scrapy.http import Request
+from scrapy.loader import ItemLoader
+
 from urllib import parse
 from ArticleSpider.items import JobBoleArticleItem
 from ArticleSpider.utils.common import get_md5
@@ -97,6 +99,17 @@ class JobboleSpider(scrapy.Spider):
         article_item["tags"] = tags
         article_item["url"] = response.url
         article_item["front_image_url"] = [fornt_image_url]
+        
+        item_loader = ItemLoader(item=JobBoleArticleItem(), response=response)
+        item_loader.add_css("title",".entry-header h1::text")
+        item_loader.add_css("post_date","p.entry-meta-hide-on-mobile ::text" )
+        item_loader.add_css("praise_num",".vote-post-up h10::text" )
+        item_loader.add_css("favor_num", ".bookmark-btn::text")
+        item_loader.add_css("comments_num", ".post-adds a  span::text")
+        item_loader.add_css("contant", ".entry")
+        item_loader.add_css("tags", ".entry-meta-hide-on-mobile a::text")
+        item_loader.add_value("url", response.url)
+        item_loader.add_value("front_image_url", [fornt_image_url])
 
         yield article_item
 
