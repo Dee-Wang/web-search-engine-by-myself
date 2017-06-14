@@ -89,11 +89,12 @@ class JsonExpoterPipeline(object):
 # 定制自己的pipeline
 class ArticleImagePipeline(ImagesPipeline):
     def item_completed(self, results, item, info):
-        for ok, value in results:
-            image_field_path = value["path"]
-        item["front_image_path"] = image_field_path
+        if "front_image_url" in item:
+            for ok, value in results:
+                image_field_path = value["path"]
+            item["front_image_path"] = image_field_path
 
-        return item
+            return item
 
 
 # 使用Twist框架提供的连接池将数据插入MySQL

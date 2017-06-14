@@ -7,6 +7,7 @@ import ArticleSpider
 
 from scrapy.http import Request
 from scrapy.loader import ItemLoader
+from ArticleSpider.items import ArticleItemLoader
 
 from urllib import parse
 from ArticleSpider.items import JobBoleArticleItem
@@ -79,7 +80,8 @@ class JobboleSpider(scrapy.Spider):
         contant = response.xpath('//div[@class="entry"]').extract_first("")
 
         # 获取文章的标签
-        tags_list = response.xpath('//p[@class="entry-meta-hide-on-mobile"]/a/text()').extract()
+        tags_list = response.css('.entry-meta-hide-on-mobile a::text').extract()
+        # tags_list = response.xpath('//p[@class="entry-meta-hide-on-mobile"]/a/text()').extract()
         tags_list = [element for element in tags_list if not element.strip().endswith("评论")]
         tags = ",".join(tags_list)
 
@@ -91,16 +93,16 @@ class JobboleSpider(scrapy.Spider):
         except Exception as e:
             post_date = datetime.datetime.now().date()
 
-        article_item["post_date"] = post_date
-        article_item["praise_num"] = praise_num
-        article_item["favor_num"] = favor_num
-        article_item["comments_num"] = comments_num
-        article_item["contant"] = contant
-        article_item["tags"] = tags
-        article_item["url"] = response.url
-        article_item["front_image_url"] = [fornt_image_url]
+        # article_item["post_date"] = post_date
+        # article_item["praise_num"] = praise_num
+        # article_item["favor_num"] = favor_num
+        # article_item["comments_num"] = comments_num
+        # article_item["contant"] = contant
+        # article_item["tags"] = tags
+        # article_item["url"] = response.url
+        # article_item["front_image_url"] = [fornt_image_url]
         
-        item_loader = ItemLoader(item=JobBoleArticleItem(), response=response)
+        item_loader = ArticleItemLoader(item=JobBoleArticleItem(), response=response)
         item_loader.add_css("title",".entry-header h1::text")
         item_loader.add_css("post_date","p.entry-meta-hide-on-mobile ::text" )
         item_loader.add_css("praise_num",".vote-post-up h10::text" )
@@ -110,6 +112,8 @@ class JobboleSpider(scrapy.Spider):
         item_loader.add_css("tags", ".entry-meta-hide-on-mobile a::text")
         item_loader.add_value("url", response.url)
         item_loader.add_value("front_image_url", [fornt_image_url])
+
+        article_item = item_loader.load_item()
 
         yield article_item
 
