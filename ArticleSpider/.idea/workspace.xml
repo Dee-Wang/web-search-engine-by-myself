@@ -19,8 +19,8 @@
       <file leaf-file-name="jobbole.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+            <state relative-caret-position="161">
+              <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -41,7 +41,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArticleSpider/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
+            <state relative-caret-position="1332">
               <caret line="74" column="53" lean-forward="false" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
               <folding />
             </state>
@@ -51,17 +51,17 @@
       <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ArticleSpider/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="90" column="50" lean-forward="true" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
+            <state relative-caret-position="309">
+              <caret line="134" column="20" lean-forward="true" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
               <folding>
                 <element signature="e#192#205#0" expanded="true" />
-                <element signature="e#436#496#0" expanded="false" />
-                <element signature="e#579#1204#0" expanded="false" />
-                <element signature="e#1260#2372#0" expanded="false" />
-                <element signature="e#2448#3092#0" expanded="false" />
-                <element signature="e#3479#5064#0" expanded="false" />
-                <marker date="1497423408703" expanded="true" signature="1659:1890" ph="insert into jobbolearticle... " />
-                <marker date="1497423408703" expanded="true" signature="4473:4704" ph="insert into jobbolearticle... " />
+                <element signature="e#457#517#0" expanded="false" />
+                <element signature="e#600#1225#0" expanded="false" />
+                <element signature="e#1281#2393#0" expanded="false" />
+                <element signature="e#2469#3113#0" expanded="false" />
+                <marker date="1497424445423" expanded="true" signature="1680:1911" ph="insert into jobbolearticle... " />
+                <marker date="1497424445423" expanded="false" signature="3176:4766" ph="..." />
+                <marker date="1497424445423" expanded="true" signature="4175:4406" ph="insert into jobbolearticle... " />
               </folding>
             </state>
           </provider>
@@ -71,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,7 +80,7 @@
       <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArticleSpider/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
+            <state relative-caret-position="1836">
               <caret line="102" column="19" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="19" />
               <folding>
                 <element signature="e#152#165#0" expanded="true" />
@@ -92,8 +92,8 @@
       <file leaf-file-name="re.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../mysearchvenv/lib/python3.5/re.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="171" column="30" lean-forward="true" selection-start-line="171" selection-start-column="30" selection-end-line="171" selection-end-column="30" />
+            <state relative-caret-position="3042">
+              <caret line="171" column="30" lean-forward="false" selection-start-line="171" selection-start-column="30" selection-end-line="171" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -102,7 +102,7 @@
       <file leaf-file-name="processors.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../mysearchvenv/lib/python3.5/site-packages/scrapy/loader/processors.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="1548">
               <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
               <folding />
             </state>
@@ -129,8 +129,8 @@
         <option value="$PROJECT_DIR$/ArticleSpider/utils/common.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/ArticleSpider/settings.py" />
-        <option value="$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py" />
         <option value="$PROJECT_DIR$/ArticleSpider/items.py" />
+        <option value="$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py" />
         <option value="$PROJECT_DIR$/ArticleSpider/pipelines.py" />
       </list>
     </option>
@@ -162,8 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -228,6 +226,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -471,17 +471,17 @@
     <frame x="64" y="-11" width="1857" height="987" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16694306" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16860144" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26081872" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42923978" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -521,13 +521,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py</url>
-          <line>117</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -538,7 +531,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -591,13 +584,13 @@
           <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
           <folding>
             <element signature="e#192#205#0" expanded="true" />
-            <element signature="e#436#496#0" expanded="false" />
-            <element signature="e#579#1204#0" expanded="false" />
-            <element signature="e#1260#2372#0" expanded="false" />
-            <element signature="e#2448#3092#0" expanded="false" />
-            <element signature="e#3479#5064#0" expanded="false" />
-            <marker date="1497423408703" expanded="true" signature="1659:1890" ph="insert into jobbolearticle... " />
-            <marker date="1497423408703" expanded="true" signature="4473:4704" ph="insert into jobbolearticle... " />
+            <element signature="e#457#517#0" expanded="false" />
+            <element signature="e#600#1225#0" expanded="false" />
+            <element signature="e#1281#2393#0" expanded="false" />
+            <element signature="e#2469#3113#0" expanded="false" />
+            <marker date="1497424445423" expanded="true" signature="1680:1911" ph="insert into jobbolearticle... " />
+            <marker date="1497424445423" expanded="false" signature="3176:4766" ph="..." />
+            <marker date="1497424445423" expanded="true" signature="4175:4406" ph="insert into jobbolearticle... " />
           </folding>
         </state>
       </provider>
@@ -660,13 +653,13 @@
           <caret line="61" column="26" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
           <folding>
             <element signature="e#192#205#0" expanded="true" />
-            <element signature="e#436#496#0" expanded="false" />
-            <element signature="e#579#1204#0" expanded="false" />
-            <element signature="e#1260#2372#0" expanded="false" />
-            <element signature="e#2448#3092#0" expanded="false" />
-            <element signature="e#3479#5064#0" expanded="false" />
-            <marker date="1497423408703" expanded="true" signature="1659:1890" ph="insert into jobbolearticle... " />
-            <marker date="1497423408703" expanded="true" signature="4473:4704" ph="insert into jobbolearticle... " />
+            <element signature="e#457#517#0" expanded="false" />
+            <element signature="e#600#1225#0" expanded="false" />
+            <element signature="e#1281#2393#0" expanded="false" />
+            <element signature="e#2469#3113#0" expanded="false" />
+            <marker date="1497424445423" expanded="true" signature="1680:1911" ph="insert into jobbolearticle... " />
+            <marker date="1497424445423" expanded="false" signature="3176:4766" ph="..." />
+            <marker date="1497424445423" expanded="true" signature="4175:4406" ph="insert into jobbolearticle... " />
           </folding>
         </state>
       </provider>
@@ -711,13 +704,13 @@
           <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
             <element signature="e#192#205#0" expanded="true" />
-            <element signature="e#436#496#0" expanded="false" />
-            <element signature="e#579#1204#0" expanded="false" />
-            <element signature="e#1260#2372#0" expanded="false" />
-            <element signature="e#2448#3092#0" expanded="false" />
-            <element signature="e#3479#5064#0" expanded="false" />
-            <marker date="1497423408703" expanded="true" signature="1659:1890" ph="insert into jobbolearticle... " />
-            <marker date="1497423408703" expanded="true" signature="4473:4704" ph="insert into jobbolearticle... " />
+            <element signature="e#457#517#0" expanded="false" />
+            <element signature="e#600#1225#0" expanded="false" />
+            <element signature="e#1281#2393#0" expanded="false" />
+            <element signature="e#2469#3113#0" expanded="false" />
+            <marker date="1497424445423" expanded="true" signature="1680:1911" ph="insert into jobbolearticle... " />
+            <marker date="1497424445423" expanded="false" signature="3176:4766" ph="..." />
+            <marker date="1497424445423" expanded="true" signature="4175:4406" ph="insert into jobbolearticle... " />
           </folding>
         </state>
       </provider>
@@ -795,13 +788,13 @@
           <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="e#192#205#0" expanded="true" />
-            <element signature="e#436#496#0" expanded="false" />
-            <element signature="e#579#1204#0" expanded="false" />
-            <element signature="e#1260#2372#0" expanded="false" />
-            <element signature="e#2448#3092#0" expanded="false" />
-            <element signature="e#3479#5064#0" expanded="false" />
-            <marker date="1497423408703" expanded="true" signature="1659:1890" ph="insert into jobbolearticle... " />
-            <marker date="1497423408703" expanded="true" signature="4473:4704" ph="insert into jobbolearticle... " />
+            <element signature="e#457#517#0" expanded="false" />
+            <element signature="e#600#1225#0" expanded="false" />
+            <element signature="e#1281#2393#0" expanded="false" />
+            <element signature="e#2469#3113#0" expanded="false" />
+            <marker date="1497424445423" expanded="true" signature="1680:1911" ph="insert into jobbolearticle... " />
+            <marker date="1497424445423" expanded="false" signature="3176:4766" ph="..." />
+            <marker date="1497424445423" expanded="true" signature="4175:4406" ph="insert into jobbolearticle... " />
           </folding>
         </state>
       </provider>
@@ -901,7 +894,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../mysearchvenv/lib/python3.5/site-packages/scrapy/loader/processors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
+        <state relative-caret-position="1548">
           <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
           <folding />
         </state>
@@ -909,7 +902,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ArticleSpider/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
+        <state relative-caret-position="1332">
           <caret line="74" column="53" lean-forward="false" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
           <folding />
         </state>
@@ -917,8 +910,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../mysearchvenv/lib/python3.5/re.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="171" column="30" lean-forward="true" selection-start-line="171" selection-start-column="30" selection-end-line="171" selection-end-column="30" />
+        <state relative-caret-position="3042">
+          <caret line="171" column="30" lean-forward="false" selection-start-line="171" selection-start-column="30" selection-end-line="171" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -926,24 +919,14 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ArticleSpider/items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
+        <state relative-caret-position="1836">
           <caret line="102" column="19" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="19" />
           <folding>
             <element signature="e#152#165#0" expanded="true" />
@@ -951,19 +934,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ArticleSpider/spiders/jobbole.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ArticleSpider/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="90" column="50" lean-forward="true" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
+        <state relative-caret-position="309">
+          <caret line="134" column="20" lean-forward="true" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
           <folding>
             <element signature="e#192#205#0" expanded="true" />
-            <element signature="e#436#496#0" expanded="false" />
-            <element signature="e#579#1204#0" expanded="false" />
-            <element signature="e#1260#2372#0" expanded="false" />
-            <element signature="e#2448#3092#0" expanded="false" />
-            <element signature="e#3479#5064#0" expanded="false" />
-            <marker date="1497423408703" expanded="true" signature="1659:1890" ph="insert into jobbolearticle... " />
-            <marker date="1497423408703" expanded="true" signature="4473:4704" ph="insert into jobbolearticle... " />
+            <element signature="e#457#517#0" expanded="false" />
+            <element signature="e#600#1225#0" expanded="false" />
+            <element signature="e#1281#2393#0" expanded="false" />
+            <element signature="e#2469#3113#0" expanded="false" />
+            <marker date="1497424445423" expanded="true" signature="1680:1911" ph="insert into jobbolearticle... " />
+            <marker date="1497424445423" expanded="false" signature="3176:4766" ph="..." />
+            <marker date="1497424445423" expanded="true" signature="4175:4406" ph="insert into jobbolearticle... " />
           </folding>
         </state>
       </provider>

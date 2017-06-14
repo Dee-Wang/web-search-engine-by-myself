@@ -14,7 +14,7 @@ from twisted.enterprise import adbapi
 from scrapy.pipelines.images import ImagesPipeline
 from scrapy.exporters import JsonItemExporter
 
-
+# scrapy自己生成的pipeline
 class ArticlespiderPipeline(object):
     def process_item(self, item, spider):
         return item
@@ -86,17 +86,6 @@ class JsonExpoterPipeline(object):
         return item
 
 
-# 定制自己的pipeline
-class ArticleImagePipeline(ImagesPipeline):
-    def item_completed(self, results, item, info):
-        if "front_image_url" in item:
-            for ok, value in results:
-                image_field_path = value["path"]
-            item["front_image_path"] = image_field_path
-
-            return item
-
-
 # 使用Twist框架提供的连接池将数据插入MySQL
 class MtSQLTwistedPipeline(object):
     def __init__(self, dbpool):
@@ -141,5 +130,15 @@ class MtSQLTwistedPipeline(object):
                                          item["praise_num"],item["tags"],item["url_object_id"],
                                          item["front_image_url"][0], item["contant"]))
 
+
+# 获取封面图的pipeline
+class ArticleImagePipeline(ImagesPipeline):
+    def item_completed(self, results, item, info):
+        if "front_image_url" in item:
+            for ok, value in results:
+                image_field_path = value["path"]
+            item["front_image_path"] = image_field_path
+
+            return item
 
 
