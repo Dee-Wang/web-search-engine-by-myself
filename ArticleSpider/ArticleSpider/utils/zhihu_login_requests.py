@@ -28,9 +28,10 @@ header = {
 }
 
 
+
 # 通过个人中心页面返回状态吗来判断是否为登录状态
 def is_login():
-    inbox_url = "https://www.zhihu.com/inbox"
+    inbox_url = "https://www.zhihu.com/people/dee-54-49/activities"
     response = session.get(inbox_url, headers=header, allow_redirects=False)
 
     if response.status_code != 200:
@@ -38,7 +39,6 @@ def is_login():
     else:
         return True
     pass
-
 
 
 # 获取网站的"_xsrf"的值
@@ -86,7 +86,8 @@ def zhihu_login(account, password):
 
     print("登录")
 
+
+# zhihu_login("15101599425", "walm0009")
 # get_index()
 is_login()
-
 
