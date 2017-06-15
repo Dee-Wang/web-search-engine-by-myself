@@ -14,7 +14,7 @@ from twisted.enterprise import adbapi
 from scrapy.pipelines.images import ImagesPipeline
 from scrapy.exporters import JsonItemExporter
 
-
+# scrapy自己生成的pipeline
 class ArticlespiderPipeline(object):
     def process_item(self, item, spider):
         return item
@@ -40,7 +40,7 @@ class JsonwithencodingPipeline(object):
         self.file.close()
 
 
-# 链接数据库，将爬取道德内容存储到数据库中
+# 连接数据库，将爬取道德内容存储到数据库中
 class MysqlPipeline(object):
     def __init__(self):
         # 首先要连接数据库,connect()的参数分别是root, user_name, mysql pwd, datebase_name. 字符集，以及是否使用Unicode编码
@@ -86,11 +86,59 @@ class JsonExpoterPipeline(object):
         return item
 
 
-# 定制自己的pipeline
+# 使用Twist框架提供的连接池将数据插入MySQL
+class MtSQLTwistedPipeline(object):
+    def __init__(self, dbpool):
+        self.dbpool = dbpool
+
+    @classmethod
+    def from_settings(cls, settings):
+        dbparms = dict(
+            host=settings["MYSQL_HOST"],
+            db=settings["MYSQL_DBNAME"],
+            user=settings["MYSQL_USER"],
+            passwd=settings["MYSQL_PASSWORD"],
+            charset = 'utf-8',
+            cursorclass  = MySQLdb.cursors.DictCursor,
+            use_unicode = True,
+        )
+
+        dbpool = adbapi.ConnectionPool("MySQLdb", **dbparms)
+
+        return cls(dbpool)
+
+    # 使用Twisted将MySQL插入变成异步执行
+    def process_item(self, item, spider):
+        query = self.dbpool.runInteraction(self.do_insert, item)
+        # 在执行期间可能会出现错误，但是因为是异步的，所以不能等错误返回再处理错误。
+        query.addErrback(self.handle_error, item, spider)
+
+    # 处理异步插入的异常
+    def handle_error(self, failure, item, spider):
+        print(failure)
+
+    # 执行具体的插入
+    def do_insert(self, cursor, item):
+        # 在sql语句中，"%s"是占位符，用来占住位置，方便接下来传参数
+        insert_sql = """
+            insert into jobbolearticle(title, post_date, url, favor_num, 
+                                       comments_num, praise_num, tags,url_object_id, front_image_url, contant)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s,%s)
+        """
+        cursor.execute(insert_sql, (item["title"], item["post_date"], item["url"],
+                                         item["favor_num"], item["comments_num"],
+                                         item["praise_num"],item["tags"],item["url_object_id"],
+                                         item["front_image_url"][0], item["contant"]))
+
+
+# 获取封面图的pipeline
 class ArticleImagePipeline(ImagesPipeline):
     def item_completed(self, results, item, info):
-        for ok, value in results:
-            image_field_path = value["path"]
-        item["front_image_path"] = image_field_path
+        if "front_image_url" in item:
+            for ok, value in results:
+                image_field_path = value["path"]
+            item["front_image_path"] = image_field_path
 
-        return item
+            return item
+
+
